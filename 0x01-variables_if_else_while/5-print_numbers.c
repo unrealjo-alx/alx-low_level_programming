@@ -9,7 +9,7 @@ int main(void)
 int i;
 for (i = 0; i < 10; i++)
 {
-printf("%d",i);
+printf("%d", i);
 }
 /* 10 is the ASCII for new line */
 putchar(10);
