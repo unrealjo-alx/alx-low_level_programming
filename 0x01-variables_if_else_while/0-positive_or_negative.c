@@ -2,7 +2,10 @@
 #include <stdlib.h>
 #include <time.h>
 
-/* betty style doc for function main goes there */
+/**
+ * main - Main program entry point
+ * Return: void
+ */
 int main(void)
 {
 int n;
@@ -20,6 +23,5 @@ else
 {
 printf("%d is zero\n", n);
 }
-/* your code goes there */
 return (0);
 }
