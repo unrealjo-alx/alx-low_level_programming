@@ -1,4 +1,8 @@
 #include "main.h"
+/**
+ * main - prints '_putchar' to stdout
+ * Return: void
+ */
 int main(void)
 {
 int i;
