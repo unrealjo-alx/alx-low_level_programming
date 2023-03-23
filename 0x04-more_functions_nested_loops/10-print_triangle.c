@@ -12,11 +12,11 @@ if (size <= 0)
 _putchar('\n');
 return;
 }
-for (i = 0; i <= size; i++)
+for (i = 1; i <= size; i++)
 {
-for (k = size; k > i;  k--)
+for (k = i; k < size;  k++)
 _putchar(' ');
-for (j = 0; j < i; j++)
+for (j = 1; j <= i; j++)
 _putchar('#');
 _putchar('\n');
 }
