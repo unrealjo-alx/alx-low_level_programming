@@ -1,9 +1,8 @@
 #include <stdio.h>
 /**
- * swap_int - Updates the value in the pointer to to 98.
+ * swap_int - swaps the values of two integers.
  * @a: first pointer
  * @b: second pointer
- * returns: void
  */
 void swap_int(int *a, int *b)
 {
