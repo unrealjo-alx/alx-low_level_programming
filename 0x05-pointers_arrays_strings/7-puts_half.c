@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
  * puts_half - prints half of a string, followed by a new line.
  * If the number of characters is odd,
