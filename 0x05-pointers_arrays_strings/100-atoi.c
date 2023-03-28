@@ -6,14 +6,12 @@
  */
 int _atoi(char *s)
 {
-	int num = 0, i = 0, sign = 1;
+	unsigned int num = 0, i = 0, sign = 1;
 
 	while (s[i] != '\0')
 	{
-		if (s[i] == ' ')
-			sign = 1;
-		else if (s[i] == '-')
-			sign = -1;
+		if (s[i] == '-')
+			sign = sign * -1;
 
 		if (s[i] >= 48 && s[i] <= 57)
 			num = (s[i] - 48) + num * 10;
