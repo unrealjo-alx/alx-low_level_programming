@@ -8,15 +8,15 @@
  */
 char *_strcat(char *dest, char *src)
 {
-	char *str = dest;
 	int i = 0, j = 0;
 
-	str = malloc(sizeof(src) + sizeof(dest));
-	for (; dest[i] != '\0'; i++)
-		str[i] = dest[i];
+	while (dest[i] != '\0')
+		i++;
 
 	for (; src[j] != '\0'; i++, j++)
-		str[i] = src[j];
+		dest[i] = src[j];
 
-	return (str);
+	dest[i] = '\0';
+
+	return (dest);
 }
