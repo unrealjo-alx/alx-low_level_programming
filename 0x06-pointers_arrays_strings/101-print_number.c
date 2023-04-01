@@ -1,7 +1,7 @@
 #include "main.h"
-#include <stdio.h>
 /**
  * print_number - a function that prints an integer using _putchar.
+ * @n: an integer
  */
 void print_number(int n)
 {
@@ -28,5 +28,4 @@ void print_number(int n)
 		power = power / 10;
 		once = 1;
 	}
-	_putchar('\n');
 }
