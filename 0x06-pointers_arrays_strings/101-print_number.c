@@ -12,6 +12,8 @@ void print_number(int n)
 		n = -n;
 		_putchar('-');
 	}
+	else if (n == 0)
+		_putchar('0');
 	x = n;
 
 	while (x != 0)
