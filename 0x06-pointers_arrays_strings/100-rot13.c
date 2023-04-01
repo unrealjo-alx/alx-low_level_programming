@@ -8,6 +8,7 @@ char *rot13(char *s)
 {
 	int i, j;
 	char *input, *output;
+
 	input = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	output = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
