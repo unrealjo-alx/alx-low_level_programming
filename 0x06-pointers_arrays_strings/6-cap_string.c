@@ -6,7 +6,7 @@
  */
 char *cap_string(char *s)
 {
-	int i, offset = 'a' - 'A', prev;
+	int i, offset = 'a' - 'A', prev, status;
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
@@ -14,7 +14,8 @@ char *cap_string(char *s)
 		if (prev < 0)
 			prev = -prev;
 
-		if (s[i] >= 'a' && s[i] <= 'z' && (s[prev] == ' ' || s[prev] == '\n'))
+		status = (s[prev] >= 'a' && s[prev] <= 'z') || (s[prev] >= 'A' && s[prev] <= 'Z') || (s[prev] < '0' && s[prev] > '9');
+		if (s[i] >= 'a' && s[i] <= 'z' && !status)
 			s[i] = s[i] - offset;
 	}
 	return (s);
