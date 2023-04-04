@@ -10,8 +10,8 @@ char *_strchr(char *s, char c)
 {
 	unsigned int i = 0, found = 0;
 
-	while (s[i] != '\0' && !found)
-		found = s[i++] == c;
+	while (!found)
+		found = s[i++] == c || s[i] == '\0';
 
 	if (found == 0)
 		return (NULL);
