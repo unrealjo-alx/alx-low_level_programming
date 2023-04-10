@@ -390,7 +390,10 @@ _putchar.c/     0           0     0     644     246       `
 int _putchar(char c)
 {
 	return (write(1, &c, 1));
-}main.h/         0           0     0     644     650       `
+}main.h/         0           0     0     644     689       `
+#ifndef MAIN_H
+#define MAIN_H
+
 int _putchar(char c);
 int _islower(int c);
 int _isalpha(int c);
@@ -411,3 +414,6 @@ char *_strchr(char *s, char c);
 unsigned int _strspn(char *s, char *accept);
 char *_strpbrk(char *s, char *accept);
 char *_strstr(char *haystack, char *needle);
+
+#endif
+
