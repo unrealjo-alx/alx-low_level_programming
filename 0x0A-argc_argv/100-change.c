@@ -19,7 +19,12 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 	n = atoi(argv[1]);
-	sum = sum + n / 25;
+	if (n < 0)
+	{
+		printf("0\n");
+		return (0);
+	}
+		sum = sum + n / 25;
 	n = n % 25;
 	sum = sum + n / 10;
 	n = n % 10;
