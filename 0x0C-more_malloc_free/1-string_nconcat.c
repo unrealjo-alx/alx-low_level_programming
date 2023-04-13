@@ -10,18 +10,23 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *new_str;
-	size_t i = 0, j = 0;
+	unsigned int i = 0, j = 0;
 
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
-	if (n > sizeof(s2))
+
+	if (n >= sizeof(s2))
 		n = sizeof(s2);
 
-	new_str = (char *)malloc(n + sizeof(s1));
+	new_str = (char *)malloc(n + sizeof(s1) + 1);
+
 	if (new_str == NULL)
+	{
+		free(new_str);
 		return (NULL);
+	}
 
 	while (s1[i] != '\0')
 	{
