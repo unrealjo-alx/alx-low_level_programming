@@ -20,10 +20,16 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		trvs = trvs->next;
 	}
 
+	if (trvs == NULL)
+		return (NULL);
+
 	tmp = (listint_t *)malloc(sizeof(listint_t));
 
 	if (tmp == NULL)
+	{
+		free(tmp);
 		return (NULL);
+	}
 
 	tmp->n = n;
 
