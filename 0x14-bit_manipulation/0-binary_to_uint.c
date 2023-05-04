@@ -1,25 +1,10 @@
 #include "main.h"
 /**
- * power - calculate power of x to y;
- * @x: unsigned integer
- * @y: unsigned integer
- * Return: x ^ y;
- */
-unsigned int power(unsigned int x, unsigned int y)
-{
-	unsigned int i, res = 1;
-
-	for (i = 0; i < y; i++)
-		res = res * x;
-
-	return (res);
-}
-/**
  * strlength - get string's length
  * @str: a string
  * Return: number of chars in str
  */
-unsigned int strlength(char *str)
+unsigned int strlength(const char *str)
 {
 	unsigned int n = 0;
 
@@ -36,20 +21,21 @@ unsigned int strlength(char *str)
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int i = 0, sum = 0, j = strlength((char *)b) - 1;
+	int i;
+	unsigned int sum = 0, k = 2;
 
 	if (b == NULL)
 		return (0);
 
-	while (b[i] != '\0')
+	for (i = strlength(b) - 1; i >= 0; i--)
 	{
 		if (b[i] != '0' && b[i] != '1')
 			return (0);
 
 		if (b[i] == '1')
-			sum = sum + power(2, j - i);
-		i++;
+			sum = sum + k;
+		k *= 2;
 	}
 
-	return (sum);
+	return (sum / 2);
 }
