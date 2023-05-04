@@ -10,7 +10,6 @@
  */
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	/* creating a mask */
 	if (index > INT_BASE_REP)
 		return (-1);
 

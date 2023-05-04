@@ -1,4 +1,5 @@
 #include "main.h"
+#define INT_BASE_REP (sizeof(size_t) * 8)
 /**
  * get_bit - a function that returns the value
  * of a bit at a given index.
@@ -9,18 +10,8 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned int res = -1, i = 0;
+	if (index > INT_BASE_REP)
+		return (-1);
 
-	if (n == 0 && index == 0)
-		return (0);
-
-	while (n != 0)
-	{
-		if (i == index)
-			res = n & 1;
-		i++;
-		n = n >> 1;
-	}
-
-	return (res);
+	return ((n >> index) & 1);
 }
