@@ -14,6 +14,11 @@ unsigned int power(unsigned int x, unsigned int y)
 
 	return (res);
 }
+/**
+ * strlength - get string's length
+ * @str: a string
+ * Return: number of chars in str
+ */
 unsigned int strlength(char *str)
 {
 	unsigned int n = 0;
