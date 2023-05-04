@@ -20,5 +20,8 @@ void _printb(unsigned long int x)
  */
 void print_binary(unsigned long int n)
 {
-	_printb(n);
+	if (n == 0)
+		_putchar('0');
+	else
+		_printb(n);
 }
