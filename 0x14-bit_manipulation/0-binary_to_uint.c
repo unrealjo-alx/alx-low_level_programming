@@ -1,5 +1,4 @@
 #include "main.h"
-#include <string.h>
 /**
  * power - calculate power of x to y;
  * @x: unsigned integer
@@ -15,6 +14,14 @@ unsigned int power(unsigned int x, unsigned int y)
 
 	return (res);
 }
+unsigned int strlength(char *str)
+{
+	unsigned int n = 0;
+
+	while (str[n] != '\0')
+		n++;
+	return (n);
+}
 
 /**
  * binary_to_uint - converts a binary number to an unsigned int.
@@ -24,7 +31,7 @@ unsigned int power(unsigned int x, unsigned int y)
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int i = 0, sum = 0, j = strlen(b) - 1;
+	unsigned int i = 0, sum = 0, j = strlength((char *)b) - 1;
 
 	if (b == NULL)
 		return (0);
