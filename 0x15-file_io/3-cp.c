@@ -38,13 +38,17 @@ int main(int argc, char **argv)
 	fd_from = open(argv[1], O_RDONLY);
 	if (fd_from == -1)
 	{
-		error_exit("Can't read from file", 98);
+		char msg[1024];
+		snprintf(msg, sizeof(msg), "Can't read from file %s", argv[1]);
+		error_exit(msg, 98);
 	}
 
 	fd_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0644);
 	if (fd_to == -1)
 	{
-		error_exit("Can't write to file", 99);
+		char msg[1024];
+		snprintf(msg, sizeof(msg), "Can't write to file %s", argv[2]);
+		error_exit(msg, 99);
 	}
 
 	while ((num_read = read(fd_from, buffer, BUFFER_SIZE)) > 0)
@@ -58,11 +62,24 @@ int main(int argc, char **argv)
 
 	if (num_read == -1)
 	{
-		error_exit("Can't read from file", 98);
+		char msg[1024];
+		snprintf(msg, sizeof(msg), "Can't read from file %s", argv[1]);
+		error_exit(msg, 98);
 	}
 
-	close(fd_from);
-	close(fd_to);
+	if (close(fd_from) == -1)
+	{
+		char msg[1024];
+		snprintf(msg, sizeof(msg), "Can't close fd %d", fd_from);
+		error_exit(msg, 100);
+	}
+
+	if (close(fd_to) == -1)
+	{
+		char msg[1024];
+		snprintf(msg, sizeof(msg), "Can't close fd %d", fd_to);
+		error_exit(msg, 100);
+	}
 
 	return (0);
 }
